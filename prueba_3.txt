@@ -1,0 +1,55 @@
+def imprimir_certificados(vehiculos):
+    print("\n=== Imprimir Certificados ===")
+    patente_buscada = input("Ingrese la patente del vehículo para imprimir los certificados: ")
+
+    for vehiculo in vehiculos:
+        if vehiculo.patente == patente_buscada:
+            print("\n=== Certificados del Vehículo ===")
+            print("Certificado de Emisión de Contaminantes:")
+            print("Nombre del certificado: Emisión de Contaminantes")
+            print("Patente:", vehiculo.patente)
+            print("Datos del dueño:", vehiculo.dueño)
+
+            print("\nCertificado de Anotaciones Vigentes:")
+            print("Nombre del certificado: Anotaciones Vigentes")
+            print("Patente:", vehiculo.patente)
+            print("Datos del dueño:", vehiculo.dueño)
+
+            print("\nCertificado de Multas:")
+            print("Nombre del certificado: Multas")
+            print("Patente:", vehiculo.patente)
+            print("Datos del dueño:", vehiculo.dueño)
+
+            return
+
+    print("Vehículo no encontrado. No se pueden imprimir certificados.")
+
+def mostrar_menu():
+    print("\n===== Menú Auto Seguro =====")
+    print("1. Grabar Vehículo")
+    print("2. Buscar Vehículo")
+    print("3. Imprimir Certificados")
+    print("4. Salir")
+
+def main():
+    vehiculos = []
+    while True:
+        mostrar_menu()
+        opcion = input("Ingrese el número de opción que desea ejecutar: ")
+
+        if opcion == "1":
+            grabar_vehiculo(vehiculos)
+        elif opcion == "2":
+            buscar_vehiculo(vehiculos)
+        elif opcion == "3":
+            imprimir_certificados(vehiculos)
+        elif opcion == "4":
+            print("\n¡Gracias por usar el programa Auto Seguro!")
+            print("Programa creado por [Fernando y Ronda]")
+            print("Versión 1.0")
+            break
+        else:
+            print("Opción inválida. Por favor, elija una opción válida (1, 2, 3 o 4).")
+
+if __name__ == "__main__":
+    main()
